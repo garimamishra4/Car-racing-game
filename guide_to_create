@@ -1,0 +1,50 @@
+import { defaultAllowedOrigins } from "vite"
+
+mkdir newcode // created new folder
+cd newcode
+npm create vite@latest   // created vite project
+
+give project name : study buddy
+cd studybuddy
+npm install
+
+
+
+vs code mai open 
+
+code "location of what you want to open"
+
+
+App.jsx ko khali krna 
+index.css khali krna 
+App.css remove
+
+
+jo bhi code dalna hai App.jsx mai 
+
+install tailwind css
+
+npm install tailwindcss @tailwindcss/vite
+
+
+
+vite.config.js mai 
+
+import karo and 
+call karo 
+
+
+import { defineConfig } from 'vite'   
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'    // import kara
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss(),],    // tailwind ko call kara....
+})
+
+
+
+
+
+git init     mtlv intilaise krdena
