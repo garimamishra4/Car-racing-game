@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
+import CarRace from "./CarRace";
+
 
 const teams = [
   { name: "Team Blue Lightning", colorClass: "bg-blue-500" },
