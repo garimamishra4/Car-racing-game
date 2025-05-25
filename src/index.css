@@ -1,1 +1,107 @@
 @import "tailwindcss";
+
+.race-container {
+  background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.race-track {
+  background: repeating-linear-gradient(
+    90deg,
+    #333 0px,
+    #333 50px,
+    #444 50px,
+    #444 100px
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.race-track::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0) 80%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+.finish-line {
+  background: repeating-linear-gradient(
+    0deg,
+    #fff 0px,
+    #fff 20px,
+    #000 20px,
+    #000 40px
+  );
+  box-shadow: -2px 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.lane-number {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.start-button {
+  transition: all 0.3s ease;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.start-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.5);
+}
+
+.car {
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease;
+}
+
+.car:hover {
+  transform: scale(1.1);
+}
+
+.winner-announcement {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #ffd700;
+  }
+  to {
+    text-shadow: 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ffd700;
+  }
+}
+
+.team-indicator {
+  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.team-indicator:hover {
+  transform: translateX(10px);
+}
